@@ -1,28 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <auto-complete :items="list"></auto-complete>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AutoComplete from './components/AutoComplete'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    AutoComplete
+  },
+  data () {
+    return {
+      list: [],
+      currentApi: 'https://jsonplaceholder.typicode.com/photos'
+    }
+  },
+
+  created () {
+    this.fetchData()
+  },
+
+  methods: {
+    async fetchData () {
+      const res = await fetch(this.currentApi)
+      this.list = await res.json()
+    }
   }
+
 }
 </script>
-
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
