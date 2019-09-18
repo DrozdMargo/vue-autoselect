@@ -1,5 +1,5 @@
-import { expect } from 'chai'
-import { mount } from '@vue/test-utils'
+import {expect} from 'chai'
+import {mount} from '@vue/test-utils'
 import AutoComplete from '@/components/AutoComplete.vue'
 
 describe('AutoComplete.vue', () => {
@@ -20,10 +20,11 @@ describe('AutoComplete.vue', () => {
   })
 
   it('opened list', () => {
-    const passedProp = [{ id: 1, title: 'dfdfd' }, { id: 2, title: 'fhfhf' }]
+    const passedProp = [{id: 1, title: 'dfdfd'}, {id: 2, title: 'fhfhf'}]
     const wrapper = mount(AutoComplete, {
       propsData: {
-        items: passedProp }
+        items: passedProp
+      }
     })
     const input = wrapper.find('input')
     input.trigger('focus')
@@ -33,10 +34,11 @@ describe('AutoComplete.vue', () => {
   })
 
   it('show menu on focus', () => {
-    const passedProp = [{ id: 1, title: 'dfdfd' }, { id: 2, title: 'fhfhf' }]
+    const passedProp = [{id: 1, title: 'dfdfd'}, {id: 2, title: 'fhfhf'}]
     const wrapper = mount(AutoComplete, {
       propsData: {
-        items: passedProp }
+        items: passedProp
+      }
     })
     const input = wrapper.find('input')
     input.trigger('focus')
@@ -44,10 +46,11 @@ describe('AutoComplete.vue', () => {
   })
 
   it('hide menu after select', () => {
-    const passedProp = [{ id: 1, title: 'dfdfd' }, { id: 2, title: 'fhfhf' }]
+    const passedProp = [{id: 1, title: 'dfdfd'}, {id: 2, title: 'fhfhf'}]
     const wrapper = mount(AutoComplete, {
       propsData: {
-        items: passedProp }
+        items: passedProp
+      }
     })
     const input = wrapper.find('input')
     input.trigger('focus')
@@ -64,10 +67,11 @@ describe('Key event tests', () => {
   })
 
   it('Down arrow key decrements arrowCounter by 1', () => {
-    const passedProp = [{ id: 1, title: 'dfdfd' }, { id: 2, title: 'fhfhf' }]
+    const passedProp = [{id: 1, title: 'dfdfd'}, {id: 2, title: 'fhfhf'}]
     const wrapper = mount(AutoComplete, {
       propsData: {
-        items: passedProp }
+        items: passedProp
+      }
     })
     const input = wrapper.find('input')
     input.trigger('focus')
@@ -77,10 +81,11 @@ describe('Key event tests', () => {
   })
 
   it('Down arrow key increments arrowCounter by 1', () => {
-    const passedProp = [{ id: 1, title: 'some text' }, { id: 2, title: 'title' }]
+    const passedProp = [{id: 1, title: 'some text'}, {id: 2, title: 'title'}]
     const wrapper = mount(AutoComplete, {
       propsData: {
-        items: passedProp }
+        items: passedProp
+      }
     })
     const input = wrapper.find('input')
     input.trigger('focus')
